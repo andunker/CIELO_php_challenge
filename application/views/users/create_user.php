@@ -5,7 +5,7 @@
               
               <?php echo validation_errors(); ?>
 
-              <?php echo form_open('pages/view'); ?>
+              <?php echo form_open('users/view'); ?>
 
               <div class="form-group">
                   <label for="name">Name:</label>

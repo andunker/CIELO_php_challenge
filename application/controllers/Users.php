@@ -1,10 +1,17 @@
 <?php
-class Pages extends CI_Controller
+class Users extends CI_Controller
 {
 
-        public function view($page = 'home')
+        public function __construct()
         {
-                if (!file_exists(APPPATH . 'views/pages/' . $page . '.php')) {
+            parent::__construct();
+            $this->load->model('users_model');
+            $this->load->helper('url_helper');
+        }
+
+        public function view($page = 'create_user')
+        {
+                if (!file_exists(APPPATH . 'views/users/' . $page . '.php')) {
                         // Whoops, we don't have a page for that!
                         show_404();
                 }
@@ -22,10 +29,11 @@ class Pages extends CI_Controller
                 if ($this->form_validation->run() === FALSE) {
 
                         $this->load->view('templates/header');
-                        $this->load->view('pages/' . $page);
+                        $this->load->view('users/' . $page);
                         $this->load->view('templates/footer');
                 } else {
-                        $this->load->view('pages/success');
+                        $this->users_model->set_users();
+                        $this->load->view('users/success');
                 }
         }
 }

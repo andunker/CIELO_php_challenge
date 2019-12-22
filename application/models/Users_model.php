@@ -18,6 +18,6 @@ class Users_model extends CI_Model
         'color' => $this->input->post('color')
     );
 
-    return $this->db->insert('news', $data);
+    return $this->db->insert('users', $data);
 }
 }
