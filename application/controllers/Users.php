@@ -4,9 +4,9 @@ class Users extends CI_Controller
 
         public function __construct()
         {
-            parent::__construct();
-            $this->load->model('users_model');
-            $this->load->helper('url_helper');
+                parent::__construct();
+                $this->load->model('users_model');
+                $this->load->helper('url_helper');
         }
 
         public function view($page = 'create_user')
@@ -33,7 +33,9 @@ class Users extends CI_Controller
                         $this->load->view('templates/footer');
                 } else {
                         $this->users_model->set_users();
+                        $this->load->view('templates/header');
                         $this->load->view('users/success');
+                        $this->load->view('templates/footer');
                 }
         }
 }
