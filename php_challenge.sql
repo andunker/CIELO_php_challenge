@@ -1,0 +1,9 @@
+CREATE DATABASE cielo_challenge;
+
+CREATE TABLE cielo_challenge.users (
+id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(30) NOT NULL,
+birth date NOT NULL,
+email VARCHAR(50),
+color VARCHAR(30) NOT NULL
+);
